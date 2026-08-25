@@ -16,7 +16,7 @@ function Leaf() {
   )
 }
 
-export default function Header({ tab, setTab }) {
+export default function Header({ tab, setTab, onLogout }) {
   const tabs = [
     { id: 'dashboard', label: 'Табло' },
     { id: 'import', label: 'Импорт' }
@@ -35,22 +35,32 @@ export default function Header({ tab, setTab }) {
           </div>
         </div>
 
-        <nav className="flex items-center gap-1 bg-mist rounded-full p-1">
-          {tabs.map(t => (
-            <button
-              key={t.id}
-              onClick={() => setTab(t.id)}
-              className={
-                'px-4 py-1.5 rounded-full text-sm font-medium transition ' +
-                (tab === t.id
-                  ? 'bg-white text-forest shadow-card'
-                  : 'text-moss hover:text-forest')
-              }
-            >
-              {t.label}
-            </button>
-          ))}
-        </nav>
+        <div className="flex items-center gap-2">
+          <nav className="flex items-center gap-1 bg-mist rounded-full p-1">
+            {tabs.map(t => (
+              <button
+                key={t.id}
+                onClick={() => setTab(t.id)}
+                className={
+                  'px-3 sm:px-4 py-1.5 rounded-full text-sm font-medium transition ' +
+                  (tab === t.id
+                    ? 'bg-white text-forest shadow-card'
+                    : 'text-moss hover:text-forest')
+                }
+              >
+                {t.label}
+              </button>
+            ))}
+          </nav>
+          <button
+            type="button"
+            onClick={onLogout}
+            className="px-3 py-2 rounded-full text-sm font-medium text-moss hover:text-forest hover:bg-mist transition"
+            title="Изход от таблото"
+          >
+            Изход
+          </button>
+        </div>
       </div>
     </header>
   )

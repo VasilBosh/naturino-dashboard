@@ -7,8 +7,8 @@ export default function ConnectBanner() {
         </div>
         <p className="text-sm text-moss mt-2 leading-relaxed">
           За да виждаш данните, отвори <code className="bg-mist px-1.5 py-0.5 rounded">src/config.js</code>{' '}
-          и попълни адреса на твоя Apps Script Web App и тайния код. Стъпките са в{' '}
-          <code className="bg-mist px-1.5 py-0.5 rounded">README.md</code>, точка 2.
+          и попълни адреса на твоя Apps Script Web App. Входът се настройва от менюто на Google таблицата. Стъпките са в{' '}
+          <code className="bg-mist px-1.5 py-0.5 rounded">README.md</code>.
         </p>
       </div>
     </div>

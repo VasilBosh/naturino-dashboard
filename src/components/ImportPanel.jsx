@@ -131,7 +131,7 @@ export default function ImportPanel() {
       {status === 'done' && result && (
         <div className="bg-white rounded-2xl shadow-card p-6 mt-5 fade-up">
           <div className="font-display text-lg text-forest font-semibold">Готово ✅</div>
-          <div className="grid grid-cols-3 gap-4 mt-4 text-center">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 text-center">
             <div>
               <div className="font-display text-2xl text-forest font-semibold">{result.нови ?? 0}</div>
               <div className="text-xs text-moss">нови клиенти</div>
@@ -144,7 +144,16 @@ export default function ImportPanel() {
               <div className="font-display text-2xl text-honey font-semibold">{result.пропуснати ?? 0}</div>
               <div className="text-xs text-moss">пропуснати (без телефон)</div>
             </div>
+            <div>
+              <div className="font-display text-2xl text-moss font-semibold">{result.дубликати ?? 0}</div>
+              <div className="text-xs text-moss">дубликати</div>
+            </div>
           </div>
+          {result.warning && (
+            <div className="mt-4 rounded-xl border border-honey/40 bg-honey/10 px-4 py-3 text-sm text-bark">
+              {result.warning}
+            </div>
+          )}
           <button
             onClick={reset}
             className="mt-5 bg-leaf text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-forest transition"
