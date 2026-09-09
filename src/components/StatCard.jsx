@@ -1,10 +1,12 @@
-export default function StatCard({ label, value, sub, accent }) {
+export default function StatCard({ label, value, sub, accent, size }) {
+  const valueSize = size === 'sm' ? 'text-2xl' : 'text-3xl'
+
   return (
     <div className="bg-white rounded-2xl shadow-card p-5 fade-up">
       <div className="text-sm text-moss">{label}</div>
       <div
         className={
-          'font-display text-3xl font-semibold mt-1 ' +
+          'font-display font-semibold mt-1 whitespace-nowrap ' + valueSize + ' ' +
           (accent === 'honey' ? 'text-honey' : 'text-forest')
         }
       >
